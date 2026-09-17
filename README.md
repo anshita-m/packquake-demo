@@ -50,38 +50,58 @@ provenance.
 
 ## How to run
 
+### Quickest: no Docker, no Neo4j
+
+The repo ships with the real dataset's vulnerability lookups already
+cached under `data/` (`osv_cache/`, `nvd_cache/`, `epss_cache/`), so
+`NO_NEO4J=1` builds the exact same graph/scores/mitigations directly from
+local files — no database, no Docker, no live network calls.
+
 ```bash
-# 1. Backend setup
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e "backend[dev]"
 
-# 2. Start Neo4j
-docker-compose up -d
-
-# 3. Build the graph: parse SBOMs, enrich with vuln data, compute
-#    structural metrics and risk scores (run from the repo root --
-#    cache/data paths default relative to it)
-python -m graph_builder.cli --sbom-dir data/sbom --load-neo4j
-python -m graph_builder.enrich_cli --sbom-dir data/sbom --load-neo4j
-python -m graph_builder.metrics_cli
-python -m graph_builder.risk_cli
-
-# 4. Start the API (also from the repo root -- `graph_builder` is
-#    importable anywhere once installed, and the cache paths above are
-#    relative to wherever this is run from)
-uvicorn graph_builder.api:app --reload
+NO_NEO4J=1 uvicorn graph_builder.api:app --reload
 # -> http://localhost:8000/docs for Swagger UI
 
-# 5. Start the frontend (in a new terminal)
+# in a new terminal
 cd frontend
 npm install
 npm run dev
 # -> http://localhost:5173
 ```
 
-Mitigation ranking doesn't need a separate load step — the API computes
-it once at startup from whatever's already in Neo4j. An `NVD_API_KEY` env
-var is picked up automatically if set and raises NVD's rate limit.
+That's the whole thing — clone, install, run those two servers, open the
+frontend.
+
+### With Neo4j (persistent graph database)
+
+Only needed if you actually want the graph sitting in Neo4j (e.g. to run
+the Cypher queries in [`graph/queries.cypher`](graph/queries.cypher)
+yourself, or to re-run the pipeline against different SBOMs).
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e "backend[dev]"
+
+docker-compose up -d
+
+# parse SBOMs, enrich with vuln data, compute structural metrics and risk
+# scores -- run from the repo root, cache/data paths default relative to it
+python -m graph_builder.cli --sbom-dir data/sbom --load-neo4j
+python -m graph_builder.enrich_cli --sbom-dir data/sbom --load-neo4j
+python -m graph_builder.metrics_cli
+python -m graph_builder.risk_cli
+
+uvicorn graph_builder.api:app --reload    # no NO_NEO4J this time
+
+cd frontend && npm install && npm run dev
+```
+
+Mitigation ranking doesn't need a separate load step either way — the API
+computes it once at startup from whatever state it loaded. An
+`NVD_API_KEY` env var is picked up automatically if set and raises NVD's
+rate limit (only relevant if you're re-enriching against live APIs).
 
 **If your checkout's path contains a `#`**, Vite's dev server/build/test
 will fail (`#` is a URL fragment delimiter to Vite — a known upstream

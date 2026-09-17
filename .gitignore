@@ -5,11 +5,12 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 neo4j_data/
-data/osv_cache/
-data/nvd_cache/
-data/epss_cache/
 node_modules/
 dist/
 .env
 .env.local
 .claude/
+
+# data/osv_cache, data/nvd_cache, data/epss_cache are intentionally
+# tracked (not ignored) -- they're what let NO_NEO4J=1 mode run fully
+# offline, with zero live API calls, on a fresh clone.

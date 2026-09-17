@@ -1,14 +1,17 @@
 """Phase 8: REST API wrapping Phases 3-7.
 
-The Neo4j-backed graph and the mitigation ranking are built ONCE at
-startup (lifespan) and held in this module's `state` singleton for the
-life of the process -- no request re-pulls from Neo4j or rebuilds the
-networkx graph. To refresh after re-running an earlier phase's pipeline,
-restart the server (see README; a hot-reload endpoint was deliberately
-not built for this).
+The graph and the mitigation ranking are built ONCE at startup (lifespan)
+and held in this module's `state` singleton for the life of the process --
+no request re-pulls from Neo4j or rebuilds the networkx graph. To refresh
+after re-running an earlier phase's pipeline, restart the server (see
+README; a hot-reload endpoint was deliberately not built for this).
 
 Run it with:
     uvicorn graph_builder.api:app --reload
+
+Set NO_NEO4J=1 to build the same state from local files instead (SBOMs +
+the on-disk vulnerability caches already shipped in the repo) -- no
+Neo4j/Docker needed, see local_state.py and the README.
 """
 
 from __future__ import annotations
@@ -35,6 +38,9 @@ NEO4J_URI = os.environ.get("NEO4J_URI", "bolt://localhost:7687")
 NEO4J_USER = os.environ.get("NEO4J_USER", "neo4j")
 NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD", "password")
 OSV_CACHE_DIR = os.environ.get("OSV_CACHE_DIR", "data/osv_cache")
+NO_NEO4J = os.environ.get("NO_NEO4J", "").lower() in ("1", "true", "yes")
+SBOM_DIR = os.environ.get("SBOM_DIR", "data/sbom")
+DATA_DIR = os.environ.get("DATA_DIR", "data")
 
 
 class AppState:
@@ -57,8 +63,19 @@ def load_state_from_neo4j(driver: Any) -> None:
     state.mitigations, _total, _skipped = compute_ranked_mitigations(driver, OSV_CACHE_DIR, DEFAULT_WEIGHTS)
 
 
+def load_state_from_local_files() -> None:
+    from .local_state import load_state_from_local_files as _load
+
+    state.graph, state.package_data, state.mitigations = _load(SBOM_DIR, DATA_DIR)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    if NO_NEO4J:
+        load_state_from_local_files()
+        yield
+        return
+
     from neo4j import GraphDatabase
 
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
