@@ -1,0 +1,230 @@
+[
+  {
+    "app_id": "flack",
+    "finding": "Cross-Domain JavaScript Source File Inclusion",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Domain JavaScript Source File Inclusion",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Domain JavaScript Source File Inclusion",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Domain JavaScript Source File Inclusion",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Domain JavaScript Source File Inclusion",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Missing Anti-clickjacking Header",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Missing Anti-clickjacking Header",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "X-Content-Type-Options Header Missing",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "X-Content-Type-Options Header Missing",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "X-Content-Type-Options Header Missing",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/colors.css"
+  },
+  {
+    "app_id": "flack",
+    "finding": "X-Content-Type-Options Header Missing",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/models/token.js"
+  },
+  {
+    "app_id": "flack",
+    "finding": "X-Content-Type-Options Header Missing",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/styles.css"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Information Disclosure - Suspicious Comments",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/app.js"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Information Disclosure - Suspicious Comments",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/models/user.js"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Information Disclosure - Suspicious Comments",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/views/login_form.js"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Information Disclosure - Suspicious Comments",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/views/message.js"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Information Disclosure - Suspicious Comments",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/views/message_list.js"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Content Security Policy (CSP) Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Content Security Policy (CSP) Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Content Security Policy (CSP) Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/robots.txt"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Content Security Policy (CSP) Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/sitemap.xml"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Storable and Cacheable Content",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/robots.txt"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Storable and Cacheable Content",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/sitemap.xml"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Storable and Cacheable Content",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/colors.css"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Storable and Cacheable Content",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/models/message_list.js"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Storable and Cacheable Content",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/styles.css"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Permissions Policy Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Permissions Policy Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Permissions Policy Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/robots.txt"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Permissions Policy Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/sitemap.xml"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Permissions Policy Header Not Set",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/static/models/message_list.js"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Modern Web Application",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Modern Web Application",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001/"
+  },
+  {
+    "app_id": "flack",
+    "finding": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5001"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "_comment": "SYNTHETIC fixture, not a real OSV response -- GHSA-only advisories with no CVE alias exist in practice (e.g. some npm-only advisories), but none of our real saved fixtures happen to contain one. Exercises the ghsa_id fallback path.",
+  "id": "GHSA-0000-aaaa-bbbb",
+  "summary": "Synthetic advisory with no CVE alias",
+  "aliases": [],
+  "modified": "2024-01-01T00:00:00Z",
+  "severity": [
+    {"type": "CVSS_V3", "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"}
+  ],
+  "database_specific": {"severity": "HIGH"}
+}

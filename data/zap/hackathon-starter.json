@@ -1,0 +1,86 @@
+[
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Cross-Domain JavaScript Source File Inclusion",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/api/google-maps"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "X-Content-Type-Options Header Missing",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Information Disclosure - Suspicious Comments",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Content Security Policy (CSP) Header Not Set",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Non-Storable Content",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/api/facebook"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Cookie without SameSite Attribute",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "PII Disclosure",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/api/stripe"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Permissions Policy Header Not Set",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/login"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Modern Web Application",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Authentication Request Identified",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/login"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Session Management Response Identified",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Sub Resource Integrity Attribute Missing",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/api/google-maps"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/login"
+  },
+  {
+    "app_id": "hackathon-starter",
+    "finding": "Application Error Disclosure",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:8080/api/foursquare"
+  }
+]

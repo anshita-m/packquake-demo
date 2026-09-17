@@ -1,0 +1,22 @@
+{
+  "hackathon-starter": {
+    "internet_facing": true,
+    "request_volume_normalized": 0.7,
+    "resource_criticality": 0.6
+  },
+  "node-realworld": {
+    "internet_facing": true,
+    "request_volume_normalized": 0.6,
+    "resource_criticality": 0.5
+  },
+  "microblog": {
+    "internet_facing": true,
+    "request_volume_normalized": 0.4,
+    "resource_criticality": 0.4
+  },
+  "flack": {
+    "internet_facing": true,
+    "request_volume_normalized": 0.35,
+    "resource_criticality": 0.35
+  }
+}

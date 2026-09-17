@@ -1,0 +1,306 @@
+.reasoning-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 380px;
+  max-width: 92vw;
+  background: #fff;
+  box-shadow: -4px 0 24px rgba(16, 24, 40, 0.14);
+  z-index: 100;
+  overflow-y: auto;
+  animation: slide-in 0.18s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.drawer-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: 10px 10px 0 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f4f7;
+  color: #344054;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.drawer-close:hover {
+  background: #e4e7ec;
+}
+
+.drawer-status {
+  padding: 40px 20px;
+  text-align: center;
+  color: #667085;
+  font-size: 14px;
+}
+
+.drawer-status.error {
+  color: #b42318;
+}
+
+.drawer-body {
+  padding: 16px 20px 28px;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-right: 30px;
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #101828;
+}
+
+.version-tag {
+  font-weight: 400;
+  color: #667085;
+  font-size: 15px;
+}
+
+.ecosystem-badge {
+  font-size: 11px;
+  background: #eef2f6;
+  border-radius: 4px;
+  padding: 3px 7px;
+  color: #475467;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.risk-score-card {
+  margin-top: 14px;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  background: #fafafa;
+}
+
+.risk-score-value {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.risk-score-label {
+  font-size: 13px;
+  color: #344054;
+  font-weight: 600;
+}
+
+.dim {
+  color: #667085;
+  font-weight: 400;
+}
+
+/* The single "what happens if this breaks" fact, called out big -- this is
+   the thing the user most needs to see at a glance ("Affects: X" used to be
+   small unstyled text buried at the bottom of the panel). */
+.impact-banner {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.impact-banner.impact-active {
+  background: #fff4e5;
+  border: 1.5px solid #f0b429;
+  color: #7a4a00;
+}
+
+.impact-banner.impact-none {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  color: #14532d;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.impact-icon {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+section {
+  margin-top: 22px;
+}
+
+section h3 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #667085;
+}
+
+.factor-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.factor-card {
+  border: 1px solid #eaecf0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fafbfc;
+}
+
+.factor-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.factor-label {
+  font-weight: 700;
+  font-size: 13px;
+  color: #101828;
+}
+
+.factor-raw {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* The explanation sentence is the primary content of each card -- the raw
+   number above is deliberately smaller and muted. */
+.factor-explanation {
+  margin: 5px 0 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #1d2939;
+}
+
+.contribution-bar-track {
+  height: 6px;
+  border-radius: 3px;
+  background: #e4e7ec;
+  overflow: hidden;
+}
+
+.contribution-bar-fill {
+  height: 100%;
+  background: #667085;
+  border-radius: 3px;
+}
+
+.no-data {
+  color: #98a2b3;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.vuln-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vuln-list li {
+  border: 1px solid #eaecf0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.vuln-id {
+  font-weight: 700;
+  color: #101828;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vuln-type-badge {
+  font-size: 10px;
+  background: #eef2f6;
+  border-radius: 3px;
+  padding: 1px 5px;
+  color: #475467;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.vuln-meta {
+  color: #475467;
+  margin-top: 3px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.stat-tile {
+  border: 1px solid #eaecf0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fafbfc;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #101828;
+}
+
+.stat-caption {
+  font-size: 11px;
+  color: #667085;
+  margin-top: 2px;
+}
+
+.note {
+  font-size: 12px;
+  color: #667085;
+  font-style: italic;
+  margin: 6px 0 0;
+}
+
+.note.good {
+  color: #067647;
+  font-style: normal;
+  font-weight: 600;
+}

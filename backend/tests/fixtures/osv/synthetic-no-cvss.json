@@ -1,0 +1,7 @@
+{
+  "_comment": "SYNTHETIC fixture -- a vuln with a CVE alias but genuinely no CVSS anywhere (no top-level severity, no database_specific.severity). Exercises the NVD fallback path.",
+  "id": "GHSA-1111-cccc-dddd",
+  "summary": "Synthetic advisory with no CVSS data at all",
+  "aliases": ["CVE-2016-0001"],
+  "modified": "2024-01-01T00:00:00Z"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "app_id": "microblog",
+    "finding": "Missing Anti-clickjacking Header",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "X-Content-Type-Options Header Missing",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002/auth/login"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Information Disclosure - Debug Error Messages",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5002/auth/login"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "User Controllable HTML Element Attribute (Potential XSS)",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002/auth/login?next=%2Findex"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Content Security Policy (CSP) Header Not Set",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Non-Storable Content",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Cookie without SameSite Attribute",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Permissions Policy Header Not Set",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Authentication Request Identified",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002/auth/login"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Session Management Response Identified",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Cross-Origin-Embedder-Policy Header Missing or Invalid",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:5002/auth/login"
+  },
+  {
+    "app_id": "microblog",
+    "finding": "Application Error Disclosure",
+    "risk_level": "Medium",
+    "url": "http://host.docker.internal:5002/auth/login"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "app_id": "node-express-realworld-example-app",
+    "finding": "X-Content-Type-Options Header Missing",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:3000"
+  },
+  {
+    "app_id": "node-express-realworld-example-app",
+    "finding": "Server Leaks Information via X-Powered-By",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:3000"
+  },
+  {
+    "app_id": "node-express-realworld-example-app",
+    "finding": "Storable and Cacheable Content",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:3000"
+  },
+  {
+    "app_id": "node-express-realworld-example-app",
+    "finding": "CSP: Failure to Define Directive with No Fallback",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:3000/robots.txt"
+  },
+  {
+    "app_id": "node-express-realworld-example-app",
+    "finding": "Permissions Policy Header Not Set",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:3000/robots.txt"
+  },
+  {
+    "app_id": "node-express-realworld-example-app",
+    "finding": "Cross-Domain Misconfiguration",
+    "risk_level": "Low",
+    "url": "http://host.docker.internal:3000"
+  }
+]

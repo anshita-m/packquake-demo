@@ -1,0 +1,191 @@
+.graph-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: #fcfcfd;
+  border-radius: 10px;
+  border: 1px solid #e4e7ec;
+  overflow: hidden;
+}
+
+.graph-toolbar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* The reasoning drawer is 380px wide and covers the right edge of the
+   graph -- shift the toolbar clear of it so its buttons stay clickable
+   while a package is selected. */
+.graph-toolbar.toolbar-drawer-open {
+  right: 396px;
+}
+
+@media (max-width: 480px) {
+  /* Below ~480px the drawer is nearly full-width (92vw) anyway; drop the
+     toolbar to a second row instead of squeezing it into a sliver. */
+  .graph-toolbar.toolbar-drawer-open {
+    right: 12px;
+    top: 50px;
+  }
+}
+
+.graph-btn {
+  background: #fff;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #344054;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.graph-btn:hover {
+  background: #f9fafb;
+  border-color: #98a2b3;
+}
+
+.zoom-btn-group {
+  display: flex;
+  gap: 1px;
+}
+
+.zoom-btn {
+  width: 32px;
+  padding: 6px 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.zoom-btn-group .zoom-btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right-width: 0;
+}
+
+.zoom-btn-group .zoom-btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.graph-btn-reset {
+  color: #b42318;
+  border-color: #fda29b;
+}
+
+.graph-btn-reset:hover {
+  background: #fef3f2;
+  border-color: #b42318;
+}
+
+.graph-hint {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  /* Leave room for the toolbar (zoom +/-, Fit view, Close all) on the
+     right so the two floating overlays never overlap, even when both wrap
+     to 2 lines. */
+  max-width: calc(100% - 290px);
+  background: #fff;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #344054;
+  pointer-events: none;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+@media (max-width: 600px) {
+  .graph-hint {
+    max-width: calc(100% - 24px);
+    top: 56px;
+  }
+}
+
+.graph-legend {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e4e7ec;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  color: #475467;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.legend-row + .legend-row {
+  margin-top: 6px;
+}
+
+.legend-label {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.legend-gradient {
+  width: 140px;
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid #d0d5dd;
+}
+
+.legend-caption {
+  color: #667085;
+}
+
+.legend-hints {
+  gap: 16px;
+  color: #667085;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.selected-swatch {
+  border: 2px solid #1565c0;
+  background: transparent;
+}
+
+.compromised-swatch {
+  border: 2px solid #6a1b9a;
+  background: transparent;
+}
+
+.legend-dashed-line {
+  display: inline-block;
+  width: 18px;
+  border-top: 2px dashed #6a1b9a;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.legend-dash-req {
+  display: inline-block;
+  width: 18px;
+  border-top: 2px dashed #8a94a6;
+  margin-right: 4px;
+  vertical-align: middle;
+}

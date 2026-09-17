@@ -1,0 +1,33 @@
+[project]
+name = "graph_builder"
+version = "0.1.0"
+description = "SBOM parsing and shared dependency graph construction (Phase 2)"
+requires-python = ">=3.10"
+dependencies = [
+    "neo4j>=5.14",
+    "requests>=2.31",
+    "networkx>=3.0",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "httpx>=0.27",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["graph_builder"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "live: hits real external APIs (OSV/NVD/EPSS/Neo4j); deselected by default, run with `-m live`.",
+]
+addopts = "-m 'not live'"

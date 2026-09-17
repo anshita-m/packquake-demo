@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.DS_Store
+neo4j_data/
+data/osv_cache/
+data/nvd_cache/
+data/epss_cache/
+node_modules/
+dist/
+.env
+.env.local
+.claude/
